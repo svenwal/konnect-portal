@@ -8,6 +8,9 @@
         <div style="display: inline;"><img
           class="logo"
           :src="logoSrc"
+          :alt="helpText.logoAlt"
+          style="display: inline;"
+        >&nbsp;BanKonG <span style="color: #00AD80">Developer Portal</span></div>
 <<<<<<< HEAD
           :alt="helpText.logoAlt"
           style="display: inline;"
@@ -41,7 +44,6 @@
             {
               label: helpText.userDropdown.myApps,
               routerLink: 'my-apps',
-              testid: 'my-apps-item'
             }, {
               label: helpText.userDropdown.logout,
               onClick: () => logout(),
