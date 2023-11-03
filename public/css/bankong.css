@@ -1,0 +1,13 @@
+.products-top-section {
+    background-size: cover;
+}
+
+#hero-background {
+    text-align: center;
+    padding: 1em;
+    background-color: #00AD8077;
+}
+
+#hero-background h4.products-welcome {
+    color: #ffffff;
+}

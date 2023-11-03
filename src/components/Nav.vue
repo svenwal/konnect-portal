@@ -5,11 +5,12 @@
   >
     <div class="w-100 container max-w-screen-2xl mx-auto flex justify-between items-center px-5 md:px-0">
       <router-link to="/">
-        <img
+        <div style="display: inline;"><img
           class="logo"
           :src="logoSrc"
           :alt="helpText.logoAlt"
-        >
+          style="display: inline;"
+        >&nbsp;BanKonG <span style="color: #00AD80">Developer Portal</span></div>
       </router-link>
       <nav class="flex items-center links">
         <router-link
