@@ -161,6 +161,14 @@ export const portalRouter = () => {
             ]
           },
           {
+            path: '/demo-env',
+            name: 'DemoEnv',
+            meta: {
+              name: 'DemoEnv'
+            },
+            component: () => import('../views/DemoEnv.vue')
+          },
+          {
             path: '/404',
             name: 'not-found',
             meta: {

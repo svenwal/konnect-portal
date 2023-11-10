@@ -14,6 +14,14 @@
       </router-link>
       <nav class="flex items-center links">
         <router-link
+          data-testid="demo-env-link"
+          :to="{ name: 'DemoEnv' }"
+          class="mr-2 p-2 demo-env-link"
+        >
+          <div class="background-color-wrapper" />
+          Demo Environment
+        </router-link>
+        <router-link
           data-testid="catalog-link"
           :to="{ name: 'catalog' }"
           class="mr-2 p-2 catalog-link"
