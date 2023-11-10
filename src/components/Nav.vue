@@ -8,9 +8,14 @@
         <div style="display: inline;"><img
           class="logo"
           :src="logoSrc"
+<<<<<<< HEAD
           :alt="helpText.logoAlt"
           style="display: inline;"
         >&nbsp;BanKonG <span style="color: #00AD80">Developer Portal</span></div>
+=======
+          :alt="helpText.nav.logoAlt"
+        >
+>>>>>>> 6323e44 (refactor(nav): convert user dropdown into generic reusable nav dropdown (#301))
       </router-link>
       <nav class="flex items-center links">
         <router-link
@@ -27,13 +32,22 @@
           class="mr-2 p-2 catalog-link"
         >
           <div class="background-color-wrapper" />
-          {{ helpText.catalog }}
+          {{ helpText.nav.catalog }}
         </router-link>
-
-        <UserDropdown
+        <NavDropdown
           v-if="developer && !isPublic"
-          :email="developer.email"
-          @logout="logout"
+          :label="developer.email"
+          :items="[
+            {
+              label: helpText.userDropdown.myApps,
+              routerLink: 'my-apps',
+            }, {
+              label: helpText.userDropdown.logout,
+              onClick: () => logout(),
+              testid: 'logout-item'
+            }
+          ]"
+          data-testid="user-dropdown"
         />
       </nav>
     </div>
@@ -44,16 +58,16 @@
 import { defineComponent } from 'vue'
 import { mapState, storeToRefs } from 'pinia'
 import { useI18nStore, useAppStore } from '@/stores'
-import UserDropdown from './UserDropdown.vue'
+import NavDropdown from './NavDropdown.vue'
 import usePortalApi from '@/hooks/usePortalApi'
 
 export default defineComponent({
   name: 'Nav',
-  components: { UserDropdown },
+  components: { NavDropdown },
   setup () {
     const appStore = useAppStore()
     const { globalLoading } = storeToRefs(appStore)
-    const helpText = useI18nStore().state.helpText.nav
+    const helpText = useI18nStore().state.helpText
 
     const logout = async () => {
       globalLoading.value = true
