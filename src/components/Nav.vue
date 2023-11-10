@@ -41,6 +41,7 @@
             {
               label: helpText.userDropdown.myApps,
               routerLink: 'my-apps',
+              testid: 'my-apps-item'
             }, {
               label: helpText.userDropdown.logout,
               onClick: () => logout(),
