@@ -166,7 +166,47 @@ export const portalRouter = () => {
             meta: {
               name: 'DemoEnv'
             },
-            component: () => import('../views/DemoEnv.vue')
+            component: () => import('../views/DemoEnv/DemoEnv.vue')
+          },
+          {
+            path: '/demo-env/dev-portal',
+            name: 'DevPortal',
+            meta: {
+              name: 'DevPortal'
+            },
+            component: () => import('../views/DemoEnv/DevPortal.vue')
+          },
+          {
+            path: '/demo-env/gateway',
+            name: 'Gateway',
+            meta: {
+              name: 'Gateway'
+            },
+            component: () => import('../views/DemoEnv/Gateway.vue')
+          },
+          {
+            path: '/demo-env/kic',
+            name: 'KIC',
+            meta: {
+              name: 'KIC'
+            },
+            component: () => import('../views/DemoEnv/KIC.vue')
+          },
+          {
+            path: '/demo-env/konnect',
+            name: 'Konnect',
+            meta: {
+              name: 'Konnect'
+            },
+            component: () => import('../views/DemoEnv/Konnect.vue')
+          },
+          {
+            path: '/demo-env/mesh',
+            name: 'Mesh',
+            meta: {
+              name: 'Mesh'
+            },
+            component: () => import('../views/DemoEnv/Mesh.vue')
           },
           {
             path: '/404',

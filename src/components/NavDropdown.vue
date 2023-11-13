@@ -10,7 +10,16 @@
         @click="toggle"
       />
       <KButton
+        v-if="showCaret"
         show-caret
+        :is-rounded="false"
+        appearance="btn-link"
+        @click="toggle"
+      >
+        {{ label }}
+      </KButton>
+      <KButton
+        v-else
         :is-rounded="false"
         appearance="btn-link"
         @click="toggle"
@@ -58,6 +67,11 @@ export default defineComponent({
     label: {
       type: String,
       required: true
+    },
+    showCaret: {
+      type: Boolean,
+      required: false,
+      default: true
     },
     items: {
       type: Array as PropType<{

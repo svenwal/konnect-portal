@@ -4,7 +4,7 @@
       class="demo-env d-flex flex-column justify-content-center align-items-center"
       data-testid="404"
     >
-
+      <h1>Ingress Controller</h1>
       <h2>Core concepts</h2>
       <p>...</p>
       <h3>API Gateway</h3>

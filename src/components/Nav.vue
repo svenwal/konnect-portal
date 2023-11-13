@@ -22,14 +22,6 @@
       </router-link>
       <nav class="flex items-center links">
         <router-link
-          data-testid="demo-env-link"
-          :to="{ name: 'DemoEnv' }"
-          class="mr-2 p-2 demo-env-link"
-        >
-          <div class="background-color-wrapper" />
-          Demo Environment
-        </router-link>
-        <router-link
           data-testid="catalog-link"
           :to="{ name: 'catalog' }"
           class="mr-2 p-2 catalog-link"
@@ -37,6 +29,36 @@
           <div class="background-color-wrapper" />
           {{ helpText.nav.catalog }}
         </router-link>
+        <NavDropdown
+          v-if="developer && !isPublic"
+          :label="menu_label"
+          :showCaret=false
+          :items="[
+            {
+              label: 'Konnect Overview',
+              routerLink: 'Konnect',
+              testid: 'konnect-item'
+            }, {
+              label: 'Kong Gateway',
+              routerLink: 'Gateway',
+              testid: 'gateway-item'
+            }, {
+              label: 'Kong Ingress Controller',
+              routerLink: 'KIC',
+              testid: 'kic-item'
+            }, {
+              label: 'Kong Mesh',
+              routerLink: 'Mesh',
+              testid: 'mesh-item'
+            }, {
+              label: 'Developer Portal',
+              routerLink: 'DevPortal',
+              testid: 'dev-portal-item'
+            }
+          ]"
+          data-testid="user-dropdown"          
+        />
+        &nbsp;
         <NavDropdown
           v-if="developer && !isPublic"
           :label="developer.email"
@@ -71,6 +93,7 @@ export default defineComponent({
     const appStore = useAppStore()
     const { globalLoading } = storeToRefs(appStore)
     const helpText = useI18nStore().state.helpText
+    const menu_label = 'Demo Environment'
 
     const logout = async () => {
       globalLoading.value = true
@@ -85,7 +108,8 @@ export default defineComponent({
     return {
       logout,
       logoSrc,
-      helpText
+      helpText,
+      menu_label
     }
   },
 
