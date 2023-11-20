@@ -5,22 +5,39 @@
   >
     <div class="w-100 container max-w-screen-2xl mx-auto flex justify-between items-center px-5 md:px-0">
       <router-link to="/">
-        <div style="display: inline;"><img
+        <img
           class="logo"
           :src="logoSrc"
-          :alt="helpText.logoAlt"
-          style="display: inline;"
-        >&nbsp;BanKonG <span style="color: #00AD80">Developer Portal</span></div>
-<<<<<<< HEAD
-          :alt="helpText.logoAlt"
-          style="display: inline;"
-        >&nbsp;BanKonG <span style="color: #00AD80">Developer Portal</span></div>
-=======
           :alt="helpText.nav.logoAlt"
         >
->>>>>>> 6323e44 (refactor(nav): convert user dropdown into generic reusable nav dropdown (#301))
       </router-link>
       <nav class="flex items-center links">
+        <NavDropdown
+          label='Demo Environment'
+          :items="[
+            {
+              label: 'Konnect',
+              routerLink: 'Konnect'
+            },
+            {
+              label: 'Gateway',
+              routerLink: 'Gateway'
+            },
+            {
+              label: 'Ingress Controller',
+              routerLink: 'KIC'
+            },
+            {
+              label: 'Mesh',
+              routerLink: 'Mesh'
+            },
+            {
+              label: 'Developer Portal',
+              routerLink: 'DevPortal'
+            },
+          ]"
+          data-testid="demo-env-dropdown"
+        />
         <router-link
           data-testid="catalog-link"
           :to="{ name: 'catalog' }"
@@ -29,36 +46,6 @@
           <div class="background-color-wrapper" />
           {{ helpText.nav.catalog }}
         </router-link>
-        <NavDropdown
-          v-if="developer && !isPublic"
-          :label="menu_label"
-          :showCaret=false
-          :items="[
-            {
-              label: 'Konnect Overview',
-              routerLink: 'Konnect',
-              testid: 'konnect-item'
-            }, {
-              label: 'Kong Gateway',
-              routerLink: 'Gateway',
-              testid: 'gateway-item'
-            }, {
-              label: 'Kong Ingress Controller',
-              routerLink: 'KIC',
-              testid: 'kic-item'
-            }, {
-              label: 'Kong Mesh',
-              routerLink: 'Mesh',
-              testid: 'mesh-item'
-            }, {
-              label: 'Developer Portal',
-              routerLink: 'DevPortal',
-              testid: 'dev-portal-item'
-            }
-          ]"
-          data-testid="user-dropdown"          
-        />
-        &nbsp;
         <NavDropdown
           v-if="developer && !isPublic"
           :label="developer.email"
@@ -93,7 +80,6 @@ export default defineComponent({
     const appStore = useAppStore()
     const { globalLoading } = storeToRefs(appStore)
     const helpText = useI18nStore().state.helpText
-    const menu_label = 'Demo Environment'
 
     const logout = async () => {
       globalLoading.value = true
@@ -108,8 +94,7 @@ export default defineComponent({
     return {
       logout,
       logoSrc,
-      helpText,
-      menu_label
+      helpText
     }
   },
 
