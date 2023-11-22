@@ -35,11 +35,22 @@
       <p>The mesh part covers the three major use cases routing, security and observability</p>
       <h2>Setup overview BanKong</h2>
       <img src="/images/BanKonGMesh.png" />
-
-
+      <h2>Prerequesites / preperation</h2>
+      <h3>Install / update kumactl</h3>
+      <p>For the ability to apply policies (especially TrafficPermissions) you need to have the latest Kong Mesh version of <KBadge>kumactl</KBadge> installed. Don't use the Kuma version. The Kong Mesh version <KExternalLink href="https://docs.konghq.com/mesh/latest/production/install-kumactl/">can be downloaded here.</KExternalLink>.</p>
+      <p>To test if you have the latest version and the one for Kong mesh try <KBadge>kumactl version</KBadge>.</p>
+      <KCodeBlock
+      id="code-block-default"
+      code='kumactl version
+Client: Kong Mesh y.y.y
+Server: Kong Mesh x.x.x'
+      language="bash"/>
+      <h3>Konnect your kumactl to the Konnect control plane</h3>
+      <p>Log into Konnect, navigate to the Mesh Manager, choose the <KBadge>Worldwide Distributed 🌏 </KBadge> control plane and at the button <KBadge>Global Control Plane Actions</KBadge> choose <KBadge>Configure kumactl</KBadge> and follow the instructions.</p>
+      <img src="/images/configure_kumactl.jpg" />
       <h1>Demo guide</h1>
       <p>Find here descriptions on how to demo all core functionalities of Kong Mesh. It is based on the BanKonG demo app - but the counter demo is also available at <KExternalLink href="https://counter.service-connectivity.com/">this ingress</KExternalLink></p>
-      
+
       <h2>The routing / load-balancing / fail-over use case</h2>
       <p>As shown in the overview graphic the BanKonG setup is distributed across EKS (all components) and GKE (just the transactions backend)</p>
       <p>The fronted has a built-in feature at the transactions page that the mesh distributes the load across EKS and GKE (zone aware load balancing is off on purpose to see the round-robin). Show this part and explain how multi-zone routing works (ingress, egress, ...)</p>
@@ -102,6 +113,12 @@ h1 {
 
 h2 {
   font-size: 1.5em;
+  margin-bottom: 0.3em;
+  margin-top: 0.3em;
+}
+
+h3 {
+  font-size: 1.2em;
   margin-bottom: 0.3em;
   margin-top: 0.3em;
 }
