@@ -6,11 +6,11 @@
     >
       <h1>Ingress Controller</h1>
       <h2>Core concepts</h2>
-      <p>...</p>
+      <p>This is a us eating our own dog food.</p>
       <h3>API Gateway</h3>
-      <p>...</p>
+      <p>This is us eating our own cat food.</p>
       <h3>Service Mesh</h3>
-      <p>...</p>
+      <p>This is us eating our own fish food.</p>
     </section>
   </Content>
 </template>
