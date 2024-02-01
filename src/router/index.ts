@@ -167,6 +167,14 @@ export const portalRouter = () => {
             component: () => import('../views/NotFound.vue')
           },
           {
+            path: '/company',
+            name: 'Company',
+            meta: {
+              name: "Company"
+            },
+            component: () => import('../views/Company.vue')
+          },
+          {
             path: '/403',
             name: 'forbidden',
             meta: {
@@ -246,7 +254,7 @@ export const portalRouter = () => {
   return router
 }
 
-export function shouldRedirectUserToPreviouslyAccessedRoute ({
+export function shouldRedirectUserToPreviouslyAccessedRoute({
   isPublic,
   to,
   previousRoute

@@ -40,9 +40,9 @@ export const de: I18nType = {
   productVersion: {
     deprecatedWarningProduct: 'Diese Produktversion ist veraltet. Die Endpunkte bleiben voll funktionsfähig, bis diese Version eingestellt wird.',
     unableToRetrieveDoc: 'Keine Dokumentation verfügbar',
-    noProductVersionsDetail: translationNeeded(en.productVersion.noProductVersionsDetail),
-    noProductVersionsTitle: translationNeeded(en.productVersion.noProductVersionsTitle),
-    registerProductVersion: translationNeeded(en.productVersion.registerProductVersion)
+    noProductVersionsDetail: 'Diese Applikation ist für keine Produkt Version registriert',
+    noProductVersionsTitle: 'Keine Produkt Versionen',
+    registerProductVersion: 'Produkt Version registrieren'
   },
   userDropdown: {
     myApps: 'Meine Applikationen',
@@ -103,8 +103,8 @@ export const de: I18nType = {
     delete: 'Löschen',
     proceed: 'Weiter',
     applicationName: 'Name der Applikation',
-    clientID: translationNeeded(en.application.clientID),
-    clientSecret: translationNeeded(en.application.clientSecret),
+    clientID: 'Client ID',
+    clientSecret: 'Client Secret',
     reqField: ' Pflichtfeld',
     redirectUriLabel: 'Redirect URI',
     applicationCredentials: 'Zugangsdaten der Applikation',
@@ -143,9 +143,9 @@ export const de: I18nType = {
     sectionPrevious: translationNeeded(en.analytics.sectionPrevious),
     selectDateRange: translationNeeded(en.analytics.selectDateRange),
     selectProductVersions: translationNeeded(en.analytics.selectProductVersions),
-    summary: translationNeeded(en.analytics.summary),
+    summary: 'Zusammenfassung',
     summary24Hours: translationNeeded(en.analytics.summary24Hours),
-    summary30Days: translationNeeded(en.analytics.summary30Days),
+    summary30Days: "30 Tage",
     summaryTooltip: (timespan: string) => translationNeeded(en.analytics.summaryTooltip(timespan)),
     timeRange: translationNeeded(en.analytics.timeRange),
     totalRequests: translationNeeded(en.analytics.totalRequests),
@@ -154,7 +154,7 @@ export const de: I18nType = {
   },
   productList: {
     titleProducts: 'Produkte',
-    showMoreLabel: (items: string) => translationNeeded(en.productList.showMoreLabel(items)),
+    showMoreLabel: (items: string) => `+ ${items} mehr`,
     actions: {
       unregister: 'Registrierung aufheben'
     },
@@ -167,7 +167,7 @@ export const de: I18nType = {
       nameProduct: 'Produkt',
       version: 'Version',
       status: 'Status',
-      scopes: translationNeeded(en.productList.labels.scopes),
+      scopes: 'Scopes',
       actions: 'Aktionen'
     }
   },
@@ -185,7 +185,7 @@ export const de: I18nType = {
   },
   applicationRegistration: {
     noAvailableApplications: 'Aktuell haben Sie noch keine Applikationen registriert.',
-    noFoundApplications: translationNeeded(en.applicationRegistration.noFoundApplications),
+    noFoundApplications: 'Keine Applikation gefunden',
     searchPlaceholder: translationNeeded(en.applicationRegistration.searchPlaceholder),
     filterScopes: translationNeeded(en.applicationRegistration.filterScopes),
     availableScopesLabel: translationNeeded(en.applicationRegistration.availableScopesLabel),
@@ -289,8 +289,8 @@ export const de: I18nType = {
     plus: 'Plus',
     myApps: 'Meine Applikationen',
     refreshSecret: 'Secret erneuern',
-    noSearchResults: translationNeeded(en.myApp.noSearchResults),
-    searchPlaceholder: translationNeeded(en.myApp.searchPlaceholder),
+    noSearchResults: 'Keine Applikation gefunden',
+    searchPlaceholder: 'Applikation suchen',
     delete: 'Löschen',
     cancel: 'Abbrechen',
     noApp: 'Keine Applikationen',
