@@ -7,7 +7,7 @@
             <nav class="flex items-center links">
                 <router-link data-testid="company-link" :to="{ name: 'Company' }" class="mr-2 p-2 catalog-link">
                     <div class="background-color-wrapper" />
-                    Company
+                    Über uns
                 </router-link>
                 <router-link data-testid="catalog-link" :to="{ name: 'catalog' }" class="mr-2 p-2 catalog-link">
                     <div class="background-color-wrapper" />

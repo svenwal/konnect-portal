@@ -5,10 +5,10 @@
                 style="background-position: top; height:300px ;background-image:
                 url(https://www.six-group.com/dam/images/sites/future-of-finance/20200921_SIX-FutureIsNow_MG_1617_web-16-9-5.six-image.wide.1920.jpg">
                 <h1 class="products-title mb-5 font-normal color-text_colors-hero text-4xl"
-                    style="text-shadow: 1px 1px 2px black;">Overview of SIX</h1>
+                    style="text-shadow: 1px 1px 2px black;">Über uns</h1>
                 <p class="products-title mb-5 font-normal color-text_colors-hero text-2xl text-center text-bold"
                     style="color:white; text-shadow: 1px 1px 2px black; width: 70%;">
-                    SIX operates the infrastructure for the Swiss and Spanish financial centers, catering to a broad,
+                    We are operating the infrastructure for the European centers, catering to a broad,
                     international client base. We provide services relating to securities transactions, the provision of
                     financial information and banking services
                 </p>
@@ -21,15 +21,15 @@
                 <h2 class="mb-1 type-xxl" style="padding-bottom: 0.5em;padding-top:2em">Connecting Market Participants
                     Around the World
                 </h2>
-                <p>SIX operates the infrastructure for the financial centers in Switzerland and Spain, thus ensuring the
-                    flow of information and money between financial market players. SIX offers exchange services,
+                <p>WE operate the infrastructure for the financial centers in EUROPE, thus ensuring the
+                    flow of information and money between financial market players. WE offer exchange services,
                     financial
                     information and banking services with the aim of increasing efficiency, quality and innovative
                     capacity
-                    along the entire value chain. SIX is also building a digital infrastructure for the new millennium.
+                    along the entire value chain. We are also building a digital infrastructure for the new millennium.
                 </p>
 
-                <p style="padding-top:0.6em">SIX connects financial market participants in Switzerland, Spain and throughout
+                <p style="padding-top:0.6em">We connect financial market participants in Europe and throughout
                     the world. The
                     company is
                     owned by around 120 national and international financial institutions. They are the main users of
