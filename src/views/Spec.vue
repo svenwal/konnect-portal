@@ -17,6 +17,13 @@
       />
     </div>
 
+    <!-- JS: Add button to allow user to raise a ticket for this API -->
+    <div v-if="spec" style="display: flex; justify-content: end; padding-right: 32px; padding-bottom: 10px;">
+      <KButton style="float:right" @click="handleRaiseTicket">Raise an issue with this API</KButton>
+    </div>
+    <TicketForm :visible="raiseTicket" :paths="specPaths" @submitted="handleSubmitted" @cancelled="handleCancelled"></TicketForm>
+    <!-- JS -->
+
     <div
       v-if="hasProductError"
       class="spec-render-error"
@@ -65,7 +72,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, ref, watch, onMounted, toRaw, ComputedGetter } from 'vue'
+import { defineComponent, computed, ref, watch, onMounted, toRaw, ComputedGetter, reactive } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useRoute, useRouter } from 'vue-router'
 import jsyaml from 'js-yaml'
@@ -79,10 +86,16 @@ import { OperationListItem, SpecDetails } from '@kong-ui-public/spec-renderer'
 import { idFromPathMethod } from '@/helpers/generatedOperationId'
 import '@kong-ui-public/spec-renderer/dist/style.css'
 import { ProductVersionSpecDocument } from '@kong/sdk-portal-js'
+import TicketForm from '../components/Tickets/TicketForm.vue'
+import { SpecPaths } from '@/specs'
+import { pathsToStateValue } from 'xstate/lib/utils'
+import { SelectItem } from '@kong/kongponents/dist/types'
+import TicketServiceApi from '@/services/TicketService'
 
 export default defineComponent({
   name: 'Spec',
   components: {
+    TicketForm,
     SpecDetails,
     ViewSpecModal,
     ViewSpecRegistrationModal
@@ -94,6 +107,12 @@ export default defineComponent({
     }
   },
   setup (props) {
+    let raiseTicket = ref(false)
+    const ticketServiceApi = new TicketServiceApi()
+    const handleRaiseTicket = () => {
+      raiseTicket.value = true;
+    }
+    let specPaths: SelectItem[] = reactive([])
     const loading = ref(false)
     const spec = ref(null)
     const currentVersion = ref(null)
@@ -113,6 +132,17 @@ export default defineComponent({
       (x: string) => JSON.parse(x),
       (x: string) => jsyaml.load(x)
     ]
+
+    const handleSubmitted = (data) => {
+      console.log(JSON.stringify(data))
+      ticketServiceApi.postTicket(data).then((response) => {
+        alert('ticket raised')
+      })
+      raiseTicket.value = false
+    }
+    const handleCancelled = () => {
+      raiseTicket.value = false
+    }
 
     const applicationRegistrationEnabled = computed(() => {
       return currentVersion.value.registration_configs?.length && isAllowedToRegister.value
@@ -323,7 +353,7 @@ export default defineComponent({
 
       return await portalApiV2.value.service.versionsApi.getProductVersionSpec({
         productId: $route.params.product as string,
-        versionId: version
+        productVersionId: version
       })
         .then(async res => {
           // no content
@@ -342,6 +372,15 @@ export default defineComponent({
             try {
               parsedObject = parser(rawContent)
               if (parsedObject) {
+                /* JS: Create a list of endpoint names */
+                for (const [key] of Object.entries(parsedObject.paths)) {
+                  specPaths.push({
+                    label: key,
+                    value: key,
+                    selected: false
+                  })
+                }
+                // JS: */
                 break
               }
             } catch (err) {
@@ -471,7 +510,12 @@ export default defineComponent({
       specDetails,
       applicationRegistrationEnabled,
       triggerViewSpecModal,
-      triggerViewSpecRegistrationModal
+      triggerViewSpecRegistrationModal,
+      raiseTicket,
+      handleRaiseTicket,
+      handleSubmitted,
+      handleCancelled,
+      specPaths
     }
   }
 })
