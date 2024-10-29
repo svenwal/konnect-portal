@@ -12,32 +12,7 @@
         >
       </router-link>
       <nav class="flex items-center links">
-        <NavDropdown
-          label='Demo Environment'
-          :items="[
-            {
-              label: 'Konnect',
-              routerLink: 'Konnect'
-            },
-            {
-              label: 'Gateway',
-              routerLink: 'Gateway'
-            },
-            {
-              label: 'Ingress Controller',
-              routerLink: 'KIC'
-            },
-            {
-              label: 'Mesh',
-              routerLink: 'Mesh'
-            },
-            {
-              label: 'Developer Portal',
-              routerLink: 'DevPortal'
-            },
-          ]"
-          data-testid="demo-env-dropdown"
-        />
+
         <router-link
           data-testid="catalog-link"
           :to="{ name: 'catalog' }"
