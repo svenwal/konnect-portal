@@ -46,6 +46,15 @@
           <div class="background-color-wrapper" />
           {{ helpText.nav.catalog }}
         </router-link>
+        <details>
+          <summary style="margin-right:1em; list-style: none;">🌐</summary>
+          <ul id="languageSelector" class="list-none m-0 p-0 absolute w-14 shadow bg-white">
+                    <li class="type-md block"><a href="https://en-developer.bankong.cloud/" class="color-text_colors-primary block py-3 px-4">🇬🇧</a></li>
+                    <li class="type-md block"><a href="https://fr-developer.bankong.cloud/" class="color-text_colors-primary block py-3 px-4">🇫🇷</a></li>
+                    <li class="type-md block"><a href="https://de-developer.bankong.cloud/" class="color-text_colors-primary block py-3 px-4">🇩🇪</a></li>
+                    <li class="type-md block"><a href="https://es-developer.bankong.cloud/" class="color-text_colors-primary block py-3 px-4">🇪🇸</a></li>
+                  </ul>
+        </details>
         <NavDropdown
           v-if="developer && !isPublic"
           :label="developer.email"
