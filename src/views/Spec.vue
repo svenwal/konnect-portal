@@ -19,7 +19,7 @@
 
     <!-- JS: Add button to allow user to raise a ticket for this API -->
     <div v-if="spec" style="display: flex; justify-content: end; padding-right: 32px; padding-bottom: 10px;">
-      <KButton style="float:right" @click="handleRaiseTicket">Raise an issue with this API</KButton>
+      <KButton style="float:right" @click="handleRaiseTicket">{{ ticketLanguage.raiseButtonText }}</KButton>
     </div>
     <TicketForm :visible="raiseTicket" :paths="specPaths" @submitted="handleSubmitted" @cancelled="handleCancelled"></TicketForm>
     <!-- JS -->
@@ -149,6 +149,7 @@ export default defineComponent({
     })
 
     const helpText = useI18nStore().state.helpText
+    const ticketLanguage = useI18nStore().state.helpText.raiseTicket
 
     const productStore = useProductStore()
     const { sidebarActiveOperation, sidebarOperations } = storeToRefs(productStore)
@@ -515,7 +516,8 @@ export default defineComponent({
       handleRaiseTicket,
       handleSubmitted,
       handleCancelled,
-      specPaths
+      specPaths,
+      ticketLanguage
     }
   }
 })
