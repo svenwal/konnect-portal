@@ -310,5 +310,19 @@ export const de: I18nType = {
     notFoundTitle: 'Nicht gefunden',
     forbiddenTitle: 'Zugriff verweigert',
     errorTitle: 'Fehler'
+  },
+  raiseTicket: {
+    raiseButtonText: 'Ein Problem mit dieser API melden',
+    formHeadline: 'Ticket beim Support erstellen',
+    formSubtext: 'Bitte füllen Sie dieses Formular aus, um ein neues Ticket für das API-Produkt zu erstellen:',
+    formEmail: 'Entwickler-E-Mail',
+    formPriority: 'Priorität',
+    formServicePath: 'Pfad',
+    formRequestType: 'Anfragetyp',
+    formFilter: 'Filter',
+    formDetails: 'Problemdetails',
+    formCancel: 'Abbrechen',
+    formRaise: 'Ticket erstellen',
+    popupTicketRaised: 'Ticket wurde an den Helpdesk gesendet'
   }
 }

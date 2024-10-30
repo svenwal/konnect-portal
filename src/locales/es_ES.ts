@@ -310,5 +310,20 @@ export const es_ES: I18nType = {
     notFoundTitle: 'No encontrado',
     forbiddenTitle: 'Prohibido',
     errorTitle: 'Error'
+  },
+  raiseTicket: {
+    raiseButtonText: 'Reportar un problema con esta API',
+    formHeadline: 'Crear un ticket en soporte',
+    formSubtext: 'Por favor complete este formulario para crear un nuevo ticket para el producto API:',
+    formEmail: 'Correo electrónico del desarrollador',
+    formPriority: 'Prioridad',
+    formServicePath: 'Ruta del servicio',
+    formRequestType: 'Tipo de solicitud',
+    formFilter: 'Filtro',
+    formDetails: 'Detalles del problema',
+    formCancel: 'Cancelar',
+    formRaise: 'Crear ticket',
+    popupTicketRaised: 'El ticket ha sido enviado a soporte técnico'
+    
   }
 }

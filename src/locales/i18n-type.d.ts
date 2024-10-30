@@ -307,4 +307,18 @@ export interface I18nType {
     forbiddenTitle: string;
     errorTitle: string;
   };
+  raiseTicket: {
+    raiseButtonText: string,
+    formHeadline: string,
+    formSubtext: string,
+    formEmail: string,
+    formPriority: string,
+    formServicePath: string,
+    formRequestType: string,
+    formFilter: string,
+    formDetails: string,
+    formCancel: string,
+    formRaise: string,
+    popupTicketRaised: string
+  };
 }

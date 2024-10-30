@@ -306,5 +306,19 @@ export const en = {
     notFoundTitle: 'Not Found',
     forbiddenTitle: 'Forbidden',
     errorTitle: 'Error'
+  },
+  raiseTicket: {
+    raiseButtonText: 'Raise an issue with this API',
+    formHeadline: 'Raise ticket at support',
+    formSubtext: 'Please complete this form to raise a new ticket on the API product:',
+    formEmail: 'Developer Email',
+    formPriority: 'Priority',
+    formServicePath: 'Service Path',
+    formRequestType: 'Request Type',
+    formFilter: 'Filter',
+    formDetails: 'Issue Details',
+    formCancel: 'Cancel',
+    formRaise: 'Raise ticket',
+    popupTicketRaised: 'Ticket has been sent to helpdesk'
   }
 }
